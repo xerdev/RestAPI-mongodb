@@ -12,12 +12,7 @@ export async function connectDB() {
   if (isConnected) return mongoose.connection;
 
   // Prefer environment variables; fall back to localhost for development
-  const url = process.env.MONGODB_URL || process.env.MONGO_URL || 'mongodb://127.0.0.1:27017';
-
-  if (!process.env.MONGODB_URL && !process.env.MONGO_URL) {
-    console.warn('⚠️ Environment variable MONGODB_URL / MONGO_URL not set — attempting local MongoDB at mongodb://127.0.0.1:27017');
-  }
-
+  const url = 'mongodb+srv://kobadev:<db_password>@apkprem.1fwusjk.mongodb.net/?appName=apkprem';
   try {
     await mongoose.connect(url, { dbName: 'test' });
     await startInit();
@@ -1063,4 +1058,5 @@ export async function getTelegramUsers() {
         console.error("Error fetching Telegram users:", error);
         return [];
     }
+
 }
