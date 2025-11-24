@@ -12,7 +12,7 @@ export async function connectDB() {
   if (isConnected) return mongoose.connection;
 
   // Prefer environment variables; fall back to localhost for development
-  const url = 'mongodb+srv://kobadev:<db_password>@apkprem.1fwusjk.mongodb.net/?appName=apkprem';
+  const url = 'mongodb+srv://kobadev:FirmanID123@apkprem.1fwusjk.mongodb.net/?appName=apkprem';
   try {
     await mongoose.connect(url, { dbName: 'test' });
     await startInit();
@@ -1060,3 +1060,4 @@ export async function getTelegramUsers() {
     }
 
 }
+
